@@ -3,6 +3,11 @@
 > 官方 Model Zoo 仅支持新一代大显存卡 BW1100（135B BF16 单卡直跑，FP8 仅 BW1100/BW1101）。
 > 本项目把 MiniMax-H3 **跨型号移植**到 8× 海光 K100 AI（64GB/卡）：六卡协同、音视频同轨、
 > 与另一路 LLM 业务同机共存，持续生产至今。
+>
+> 范围说明：本仓库覆盖 **bf16 全精度、全模式（t2va/fl2va/ref2va）、生产化部署**。
+> INT8 量化与双卡 head 并行的 kernel 级优化路线见
+> [DocPang/minimax-h3-k100ai-optimization](https://github.com/DocPang/minimax-h3-k100ai-optimization)
+> ——两仓库互补，合起来是 K100AI 上 H3 的完整图景。
 
 ![海滩日落——灰暗糊修复后的验证画面](samples/sunset_1344x768_1.jpg)
 
@@ -70,6 +75,7 @@ flash_attn 2.8.3+das 及官方初始适配。完整步骤见 [01-方案](docs/01
 
 - 海光光合开发者社区（Model Zoo、DTK 手册、DCU 技术社区帖）与 sglang-diffusion / DAS 生态
 - 社区公开排障记录（gfx1151 队列停顿分析、ROCm#6437、sglang#33978 同族案例）对本项目队列问题定位的帮助
+- 同模型先行项目：[DocPang/minimax-h3-k100ai-optimization](https://github.com/DocPang/minimax-h3-k100ai-optimization)（INT8 kernel 优化与双卡 head 并行，早于本项目三周）
 - 同厂姊妹项目：[DocPang/strata-k100ai](https://github.com/DocPang/strata-k100ai)（同硬件上的 LLM 推理优化）
 
 ## 许可与声明
