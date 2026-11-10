@@ -61,6 +61,10 @@
 ```text
 基础镜像（海光官方 Model Zoo 公开定制镜像）:
   harbor.sourcefind.cn:5443/dcu/admin/base/custom:sglang-ubuntu22.04-dtk26.04-py3.10-20260731-MiniMax-H3
+官方源码仓库（部署文档 / 流水线源码）:
+  https://developer.sourcefind.cn/codes/modelzoo/minimax-h3
+权重（ModelScope 公开，135B BF16；FP8 版仅 BW1100/BW1101）:
+  https://www.modelscope.cn/models/MiniMax/MiniMax-H3
 
 容器:  --device=/dev/kfd --device=/dev/dri --group-add video --shm-size 200g --network=host
        -v <模型目录>:/models/MiniMax-H3   -v /opt/hyhal/:/opt/hyhal/:ro
@@ -81,5 +85,6 @@ flash_attn 2.8.3+das 及官方初始适配。完整步骤见 [01-方案](docs/01
 ## 许可与声明
 
 - 本仓库只包含**运行方案、补丁与验证记录**，不包含也不分发 MiniMax-H3 模型权重；
-  权重请通过海光 Model Zoo / ModelScope 官方渠道获取，并遵守其许可。
+  权重从官方渠道获取：[ModelScope MiniMax/MiniMax-H3](https://www.modelscope.cn/models/MiniMax/MiniMax-H3)，
+  并遵守其许可。
 - `samples/` 中的视频与画面帧均为本项目在 K100 AI 上实际生成的验证内容。
