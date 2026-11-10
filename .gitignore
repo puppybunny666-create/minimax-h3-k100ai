@@ -1,0 +1,10 @@
+# 本地与敏感内容，永不入库
+.ssh_tool/
+*.zcode-session
+*_helper.py
+ssh_put.py
+*cred*
+*password*
+*.tar
+minimax_purchased/
+request_*_test.json
